@@ -218,6 +218,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="BusinessLayer\DetailedBill.cs" />
+    <Compile Include="BusinessLayer\FxRates.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\DiscountsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />

@@ -51,7 +51,7 @@ namespace Edfa3lyTechInterview.Controllers
 			HttpResponseMessage response;
 			if (bill.TotalBillAfterDiscount == bill.TotalBill)
 			{
-				bill.FinalBill = bill.FinalBill * 15.6;
+				bill.FinalBill = bill.FinalBill * FxRates.USD;
 			}
 			response = Request.CreateResponse(System.Net.HttpStatusCode.OK, bill);
 			return response;
