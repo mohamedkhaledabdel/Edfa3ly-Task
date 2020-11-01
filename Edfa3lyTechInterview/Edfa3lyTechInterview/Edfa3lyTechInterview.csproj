@@ -220,9 +220,7 @@
     <Compile Include="BusinessLayer\DetailedBill.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\DiscountsController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DAL\Context.cs" />
     <Compile Include="DAL\ContextSeedInitializer.cs" />
     <Compile Include="DAL\Repositories\CartsRepository.cs" />

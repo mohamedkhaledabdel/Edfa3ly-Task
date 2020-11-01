@@ -7,6 +7,10 @@ using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 
+/*
+ * DiscountssController class defines the REST API routes and their implementaion
+ */
+
 namespace Edfa3lyTechInterview.Controllers
 {
 	public class DiscountsController : ApiController

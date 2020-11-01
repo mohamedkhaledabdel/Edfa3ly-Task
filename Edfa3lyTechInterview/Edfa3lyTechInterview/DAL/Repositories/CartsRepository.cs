@@ -5,6 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
+/*
+ * CartRepository class implementing the ICartRepository interface.
+ * Implements methods needed to access DB to query the carts table
+ */
+
 namespace Edfa3lyTechInterview.DAL.Repositories
 {
 	public class CartsRepository : ICartRepository
@@ -21,6 +26,7 @@ namespace Edfa3lyTechInterview.DAL.Repositories
 			this.context = context;
 		}
 
+		//Delete a car item by its ID
 		public void DeleteCartItemByID(Guid cartItemID)
 		{
 			var cart = this.context.Carts.Find(cartItemID);
@@ -33,6 +39,7 @@ namespace Edfa3lyTechInterview.DAL.Repositories
 			GC.SuppressFinalize(this);
 		}
 
+		//Returns a list of all cart items
 		public IEnumerable<Cart> GetCartItems()
 		{
 			return (IEnumerable<Cart>)this.context.Carts.ToList<Cart>();
@@ -43,6 +50,7 @@ namespace Edfa3lyTechInterview.DAL.Repositories
 			context.SaveChanges();
 		}
 
+		//Return bill object that defines all details of a bill of a cart
 		public DetailedBill SetTotalBill()
 		{
 			DetailedBill bill = new DetailedBill();
@@ -54,13 +62,13 @@ namespace Edfa3lyTechInterview.DAL.Repositories
 				TotalBillDiscount += item.PriceOfCartItemAfterDiscount;
 			}
 			Taxes = (TotalBill * 14) / 100;
-			Console.WriteLine("Total bill is {0}", TotalBill);
+			//Console.WriteLine("Total bill is {0}", TotalBill);
 			bill.TotalBill = this.TotalBill;
 			Console.WriteLine("Taxes amount is {0}", Taxes);
 			bill.Tax = this.Taxes;
-			Console.WriteLine("Total bill after discount is {0}", TotalBillDiscount);
+			//Console.WriteLine("Total bill after discount is {0}", TotalBillDiscount);
 			bill.TotalBillAfterDiscount = this.TotalBillDiscount;
-			Console.WriteLine("Final bill to be payed is {0}", Taxes + TotalBillDiscount);
+			//Console.WriteLine("Final bill to be payed is {0}", Taxes + TotalBillDiscount);
 			bill.FinalBill = this.Taxes + this.TotalBillDiscount;
 			return bill;
 		}

@@ -1,5 +1,6 @@
 ﻿using Edfa3lyTechInterview.DAL;
 using Edfa3lyTechInterview.DAL.Repositories;
+using Edfa3lyTechInterview.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,17 @@ namespace Edfa3lyTechInterview.Controllers
 		private ProductsController()
 		{
 			this.productRepository = new ProductRepository(new Context());
+		}
+
+		[HttpPost]
+		[Route("api/product")]
+		public HttpResponseMessage AddProduct(Product product)
+		{
+			product.ID = Guid.NewGuid();
+			this.productRepository.InsertProduct(product);
+			this.productRepository.Save();
+			HttpResponseMessage responseMessage = Request.CreateResponse(System.Net.HttpStatusCode.OK, "Added product to DB successfully");
+			return responseMessage;
 		}
 
 		//Get api/products

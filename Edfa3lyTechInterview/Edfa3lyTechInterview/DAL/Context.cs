@@ -6,6 +6,10 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
 
+/*
+ * Context class which defines the DB and its tables
+ */
+
 namespace Edfa3lyTechInterview.DAL
 {
 	public class Context : DbContext
@@ -20,6 +24,7 @@ namespace Edfa3lyTechInterview.DAL
 
 		public DbSet<Product> Products { get; set; }
 
+		//Specifiy some conventions when the model is being created
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
 			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

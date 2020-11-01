@@ -4,6 +4,10 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
+/*
+ * Cart model that reperesnts the cart table, columns, and constrains in the DB
+ */
+
 namespace Edfa3lyTechInterview.Models
 {
 	public class Product

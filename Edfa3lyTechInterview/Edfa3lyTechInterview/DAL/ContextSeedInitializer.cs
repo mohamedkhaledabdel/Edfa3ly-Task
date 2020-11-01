@@ -5,6 +5,10 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
+/*
+ * The class represents the Seed data of the DB that is used for testing purposes.
+ */
+
 namespace Edfa3lyTechInterview.DAL
 {
 	public class ContextSeedInitializer : CreateDatabaseIfNotExists<Context>

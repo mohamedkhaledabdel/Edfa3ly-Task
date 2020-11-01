@@ -1,4 +1,5 @@
-﻿using Edfa3lyTechInterview.DAL;
+﻿using Edfa3lyTechInterview.BusinessLayer;
+using Edfa3lyTechInterview.DAL;
 using Edfa3lyTechInterview.DAL.Repositories;
 using Edfa3lyTechInterview.Models;
 using Microsoft.Ajax.Utilities;
@@ -11,6 +12,10 @@ using System.Net.Http;
 using System.Reflection;
 using System.Web;
 using System.Web.Http;
+
+/*
+ * CartsController class defines the REST API routes and their implementaion
+ */
 
 namespace Edfa3lyTechInterview.Controllers
 {
@@ -41,8 +46,14 @@ namespace Edfa3lyTechInterview.Controllers
 		[HttpGet]
 		public HttpResponseMessage GetDetailedBill()
 		{
-			string JSON = JsonConvert.SerializeObject(this.cartRepository.SetTotalBill());
-			HttpResponseMessage response = Request.CreateResponse(System.Net.HttpStatusCode.OK, JSON);
+			DetailedBill bill = this.cartRepository.SetTotalBill();
+			string JSON = JsonConvert.SerializeObject(bill);
+			HttpResponseMessage response;
+			if (bill.TotalBillAfterDiscount == bill.TotalBill)
+			{
+				bill.FinalBill = bill.FinalBill * 15.6;
+			}
+			response = Request.CreateResponse(System.Net.HttpStatusCode.OK, bill);
 			return response;
 		}
 	}
