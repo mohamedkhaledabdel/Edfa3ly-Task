@@ -16,12 +16,12 @@ Buy two t-shirts and get a jacket half its price.
 
 The 3 main folders in the project are DAL which repersents data access layer, Models, and Controller
 
-* Data Access Layer
+* Data Access Layer:
 Only considered with data manipulation/creation in database. The DAL contains repositories and their interfaces
-* Models
+* Models:
 Employed the entity framework code-first which is ORM framework for ASP.net. EF is used to create models that repersents the DB tables, then migrations are created
 in order to create DB tables.
-* Controller
+* Controller:
 Created REST API controllers which is only respobsible ofr the consumpiton of REST APIs.
 i.e localhost:xxxxx/api/prdoucts
 is the route for viewing the products
