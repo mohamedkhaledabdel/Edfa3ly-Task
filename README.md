@@ -41,7 +41,7 @@ localhost:xxxxx/api/discounts/apply
 * Hosting the app on azure
 * Create front-end using react.js and host it
 * Creating unit tests
-* Currency conversion mechanism instead of hardcoded (i.e Enum)
+* Currency conversion mechanism instead of FxRates class (i.e web service for currency conversion)
 * Add a business layer to seperate business logic from APIs/Controllers in order to make them more loosely coupled
 * Add better and more organized comments
 * Add error handling and logging
