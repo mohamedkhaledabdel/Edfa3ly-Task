@@ -35,6 +35,8 @@ is the route for viewing the detailedBill
 For applying the discounts a PUT request should be perfromed using postman for instance
 localhost:xxxxx/api/discounts/apply
 
+Then navigate to the cart items and/or detailed bill APIs to view the changes done by the discounts
+
 
 
 # Features that should be added if have more time
